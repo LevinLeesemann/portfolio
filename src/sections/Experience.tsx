@@ -6,7 +6,7 @@ import { workExperiences } from "../data/work-experiences"
 
 export default function Experience() {
   return (
-    <section id="experience">
+    <section id="experience" className="mb-32">
       <SectionTitle>Where I've spent most of my time</SectionTitle>
       <SectionSubtitle>For more details about each of my roles visit my <a className="font-bold" href={urls.linkedIn} target="_blank">LinkedIn</a> profile</SectionSubtitle>
       <div className="flex flex-col">
