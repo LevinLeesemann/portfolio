@@ -44,8 +44,8 @@ export default function App() {
   return (
     <div className={isDarkModeActive ? "dark" : ""}>
       <div className="bg-background">
-        <div className="flex flex-col max-w-5xl min-h-svh mx-auto px-8">
-          <div className="grow">
+        <div className="flex flex-col min-h-dvh px-8">
+          <div className="grow max-w-5xl mx-auto">
             <Welcome />
             <Projects />
             <Experience />
