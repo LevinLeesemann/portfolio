@@ -15,7 +15,7 @@ export default function NavigationBar(props: NavigationBarProps) {
   const handle = useRef<HTMLDivElement>(null)
   const previousScrollLocation = useRef(0)
   const [isHidden, setIsHidden] = useState(false)
-  const [locale, setLocale] = useState(navigator.language.split("-").at(-1))
+  const [locale, setLocale] = useState(navigator.language.split("-").at(-1)?.toUpperCase())
 
   function show() {
     handle.current?.classList.remove("translate-y-[70%]")
