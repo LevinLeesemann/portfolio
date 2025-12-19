@@ -1,10 +1,12 @@
+import type { Translation } from "../models/translation"
 import type { WorkExperience } from "../models/work-experience"
 import Chip from "./Chip"
 
 type ExperienceItemProps = {
-  workExperience: WorkExperience
   isFirst: boolean
   isLast: boolean
+  translation: Translation
+  workExperience: WorkExperience
 }
 
 export default function WorkExperienceEntry(props: ExperienceItemProps) {
@@ -20,14 +22,14 @@ export default function WorkExperienceEntry(props: ExperienceItemProps) {
       <div className="flex flex-col py-4">
         <div className="flex flex-row gap-2 items-center">
           <p className="text-text">
-            {props.workExperience.title}
+            {props.translation.experiences[props.workExperience.id].title}
           </p>
           <div className="flex flex-row gap-2 text-xs">
-            {props.workExperience.specialization?.map(specialization => <Chip key={specialization} className="text-accent bg-accent-muted" label={specialization} />)}
+            {props.workExperience.specializationIds?.map(specialization => <Chip key={specialization} className="text-accent bg-accent-muted" label={props.translation.experience.specializationLabel[specialization]} />)}
           </div>
         </div>
         <p className="text-text-muted text-sm">
-          {props.workExperience.employer} ({props.workExperience.type.join(", ")})
+          {props.translation.experiences[props.workExperience.id].employer} ({props.workExperience.typeIds.map(id => props.translation.experience.typeLabel[id]).join(", ")})
         </p>
       </div>
     </div>

@@ -1,10 +1,10 @@
-type WorkExperienceSpecialization = "Backend" | "Frontend" | "Fullstack" | "Systems"
-type WorkExperienceType = "Full-time" | "Part-time" | "Contract" | "Internship"
+type WorkExperienceId = "seniorSoftwareEngineer" | "softwareEngineer" | "softwareEngineerII" | "softwareEngineerI" | "graduateTeachingAssistant" | "softwareEngineeringInternBackend" | "softwareEngineeringInternFrontend" | "softwareDevelopmentIntern"
+type WorkExperienceSpecializationId = "backend" | "frontend" | "fullstack" | "systems"
+type WorkExperienceTypeId = "fullTime" | "partTime" | "contract" | "internship"
 
 export type WorkExperience = {
-  title: string
-  employer: string
-  specialization?: WorkExperienceSpecialization[]
-  type: WorkExperienceType[]
+  id: WorkExperienceId
+  specializationIds?: WorkExperienceSpecializationId[]
+  typeIds: WorkExperienceTypeId[]
   isActive?: boolean
 }

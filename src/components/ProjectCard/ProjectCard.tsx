@@ -25,8 +25,8 @@ export default function ProjectCard(props: ProjectCardProps) {
       </div>
       <p className="text-text-muted">{props.translation.projects[props.project.id].description}</p>
       <div className="flex flex-row gap-2 mt-auto">
-        {props.project.downloadUrl && <ProjectCardLink label={props.translation.projectLabels.downloadLabel} link={props.project.downloadUrl} />}
-        <ProjectCardLink label={props.translation.projectLabels.sourceCodeLabel} link={props.project.sourceCodeUrl} />
+        {props.project.downloadUrl && <ProjectCardLink label={props.translation.projectLabels.download} link={props.project.downloadUrl} />}
+        <ProjectCardLink label={props.translation.projectLabels.sourceCode} link={props.project.sourceCodeUrl} />
       </div>
     </article>
   )

@@ -15,7 +15,7 @@ export default function Experience(props: ExperienceProps) {
       <SectionTitle onClick={() => window.location.replace("/#experience")}>{props.translation.experienceSection.title}</SectionTitle>
       <SectionSubtitle>{props.translation.experienceSection.subtitle.head} <a className="font-bold" href={urls.linkedIn} target="_blank">LinkedIn</a> {props.translation.experienceSection.subtitle.tail}</SectionSubtitle>
       <div className="flex flex-col">
-        {workExperiences.map(workExperience => <WorkExperienceEntry key={`${workExperience.title}${workExperience.employer}${workExperience.type.toString()}${workExperience.specialization?.toString() ?? ""}`} workExperience={workExperience} isFirst={workExperiences.indexOf(workExperience) === 0} isLast={workExperiences.indexOf(workExperience) === workExperiences.length - 1} />)}
+        {workExperiences.map(workExperience => <WorkExperienceEntry key={workExperience.id} isFirst={workExperiences.indexOf(workExperience) === 0} isLast={workExperiences.indexOf(workExperience) === workExperiences.length - 1} translation={props.translation} workExperience={workExperience} />)}
       </div>
     </section>
   )

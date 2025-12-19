@@ -1,5 +1,7 @@
+type ProjectId = "drumlineTranscriber" | "jobPostingNotifier" | "portfolioWebsite" | "tempus"
+
 export type Project = {
-  id: string
+  id: ProjectId
   languages: string[]
   technologies: string[]
   thumbnailUrl: string

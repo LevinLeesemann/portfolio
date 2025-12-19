@@ -12,14 +12,14 @@ export function getTranslation(region: string) {
 const translations: Record<string, Translation> = {
   english: {
     navigationBar: {
-      buttonLabels: {
+      buttonLabel: {
         lightDarkMode: "Light/Dark Mode",
         welcome: "Welcome",
         projects: "Projects",
         experience: "Experience",
         language: "Language",
       },
-      handleLabels: {
+      handleLabel: {
         collapse: "Collapse Navigation",
         expand: "Expand Navigation",
       },
@@ -39,8 +39,8 @@ const translations: Record<string, Translation> = {
       },
     },
     projectLabels: {
-      downloadLabel: "Download",
-      sourceCodeLabel: "Source code",
+      download: "Download",
+      sourceCode: "Source code",
     },
     projects: {
       drumlineTranscriber: {
@@ -60,6 +60,54 @@ const translations: Record<string, Translation> = {
         description: "Metronome app that delivers a flexible, real-time adjustable beat and subdivision experience",
       },
     },
+    experience: {
+      specializationLabel: {
+        backend: "Backend",
+        frontend: "Frontend",
+        fullstack: "Fullstack",
+        systems: "Systems",
+      },
+      typeLabel: {
+        fullTime: "Full-time",
+        partTime: "Part-time",
+        contract: "Contract",
+        internship: "Internship",
+      },
+    },
+    experiences: {
+      seniorSoftwareEngineer: {
+        title: "Senior Software Engineer",
+        employer: "John Deere",
+      },
+      softwareEngineer: {
+        title: "Software Engineer",
+        employer: "Kick Snare Hat Apps",
+      },
+      softwareEngineerII: {
+        title: "Software Engineer II",
+        employer: "John Deere",
+      },
+      softwareEngineerI: {
+        title: "Software Engineer I",
+        employer: "John Deere",
+      },
+      graduateTeachingAssistant: {
+        title: "Graduate Teaching Assistant",
+        employer: "University of Iowa",
+      },
+      softwareEngineeringInternBackend: {
+        title: "Software Engineering Intern",
+        employer: "John Deere",
+      },
+      softwareEngineeringInternFrontend: {
+        title: "Software Engineering Intern",
+        employer: "John Deere",
+      },
+      softwareDevelopmentIntern: {
+        title: "Software Development Intern",
+        employer: "University of Iowa",
+      },
+    },
     experienceSection: {
       title: "My main gigs",
       subtitle: {
@@ -76,14 +124,14 @@ const translations: Record<string, Translation> = {
   },
   german: {
     navigationBar: {
-      buttonLabels: {
+      buttonLabel: {
         lightDarkMode: "Hell/Dunkel Modus",
         welcome: "Willkommen",
         projects: "Projekte",
         experience: "Erfahrung",
         language: "Sprache",
       },
-      handleLabels: {
+      handleLabel: {
         collapse: "Navigation einklappen",
         expand: "Navigation ausklappen",
       },
@@ -103,8 +151,8 @@ const translations: Record<string, Translation> = {
       },
     },
     projectLabels: {
-      downloadLabel: "Herunterladen",
-      sourceCodeLabel: "Quellcode",
+      download: "Herunterladen",
+      sourceCode: "Quellcode",
     },
     projects: {
       drumlineTranscriber: {
@@ -122,6 +170,54 @@ const translations: Record<string, Translation> = {
       tempus: {
         title: "Tempus",
         description: "Metronom-App, die ein flexibles, in Echtzeit anpassbares Schlag- und Unterteilungs-Erlebnis bietet",
+      },
+    },
+    experience: {
+      specializationLabel: {
+        backend: "Backend",
+        frontend: "Frontend",
+        fullstack: "Fullstack",
+        systems: "Systeme",
+      },
+      typeLabel: {
+        fullTime: "Vollzeit",
+        partTime: "Teilzeit",
+        contract: "Vertrag",
+        internship: "Praktikum",
+      },
+    },
+    experiences: {
+      seniorSoftwareEngineer: {
+        title: "Senior Software Engineer",
+        employer: "John Deere",
+      },
+      softwareEngineer: {
+        title: "Software Engineer",
+        employer: "Kick Snare Hat Apps",
+      },
+      softwareEngineerII: {
+        title: "Software Engineer II",
+        employer: "John Deere",
+      },
+      softwareEngineerI: {
+        title: "Software Engineer I",
+        employer: "John Deere",
+      },
+      graduateTeachingAssistant: {
+        title: "Wissenschaftliche Hilfskraft",
+        employer: "Universität von Iowa",
+      },
+      softwareEngineeringInternBackend: {
+        title: "Software Engineer Praktikant",
+        employer: "John Deere",
+      },
+      softwareEngineeringInternFrontend: {
+        title: "Software Engineer Praktikant",
+        employer: "John Deere",
+      },
+      softwareDevelopmentIntern: {
+        title: "Softwareentwickler Praktikant",
+        employer: "Universität von Iowa",
       },
     },
     experienceSection: {
