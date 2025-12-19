@@ -2,6 +2,8 @@ import { DE, US } from "country-flag-icons/react/3x2"
 import { useEffect, useRef, useState } from "react"
 import { GoBriefcase, GoChevronUp, GoFileCode, GoMoon, GoSun } from "react-icons/go"
 import { PiHandWaving } from "react-icons/pi"
+import type { Translation } from "../../models/translation"
+import Tooltip from "../Tooltip"
 import NavigationBarButton from "./NavigationBarButton"
 import NavigationBarGroup from "./NavigationBarGroup"
 
@@ -11,6 +13,7 @@ type NavigationBarProps = {
   region: string
   setIsDarkModeActive: (isActive: boolean) => void
   setRegion: (region: string) => void
+  translation: Translation
 }
 
 export default function NavigationBar(props: NavigationBarProps) {
@@ -56,20 +59,22 @@ export default function NavigationBar(props: NavigationBarProps) {
 
   return (
     <div ref={handle} className="z-20 fixed inset-x-0 bottom-4 flex flex-col items-center gap transition-transform duration-250 pointer-events-none">
-      <button onClick={toggleVisibility} className="flex flex-row items-center justify-center text-text p-2.5 sm:p-3 size-10 sm:size-12 hover:cursor-pointer pointer-events-auto">
-        <GoChevronUp className={`size-full transition-transform duration-250 ${isHidden ? "rotate-0" : "rotate-180"}`} />
-      </button>
+      <Tooltip margin="-mb-2" text={isHidden ? props.translation.navigationBar.handleLabels.expand : props.translation.navigationBar.handleLabels.collapse}>
+        <button onClick={toggleVisibility} className="flex flex-row items-center justify-center text-text p-2.5 sm:p-3 size-10 sm:size-12 hover:cursor-pointer pointer-events-auto">
+          <GoChevronUp className={`size-full transition-transform duration-250 ${isHidden ? "rotate-0" : "rotate-180"}`} />
+        </button>
+      </Tooltip>
       <div className="flex flex-row justify-center gap-2 pointer-events-none">
         <NavigationBarGroup>
-          <NavigationBarButton icon={props.isDarkModeActive ? GoMoon : GoSun} onClick={() => props.setIsDarkModeActive(!props.isDarkModeActive)} />
+          <NavigationBarButton icon={props.isDarkModeActive ? GoMoon : GoSun} label={props.translation.navigationBar.buttonLabels.lightDarkMode} onClick={() => props.setIsDarkModeActive(!props.isDarkModeActive)} />
         </NavigationBarGroup>
         <NavigationBarGroup>
-          <NavigationBarButton icon={PiHandWaving} isActive={props.activeSection === "welcome"} onClick={() => goTo("welcome")} />
-          <NavigationBarButton icon={GoFileCode} isActive={props.activeSection === "projects"} onClick={() => goTo("projects")} />
-          <NavigationBarButton icon={GoBriefcase} isActive={props.activeSection === "experience"} onClick={() => goTo("experience")} />
+          <NavigationBarButton icon={PiHandWaving} isActive={props.activeSection === "welcome"} label={props.translation.navigationBar.buttonLabels.welcome} onClick={() => goTo("welcome")} />
+          <NavigationBarButton icon={GoFileCode} isActive={props.activeSection === "projects"} label={props.translation.navigationBar.buttonLabels.projects} onClick={() => goTo("projects")} />
+          <NavigationBarButton icon={GoBriefcase} isActive={props.activeSection === "experience"} label={props.translation.navigationBar.buttonLabels.experience} onClick={() => goTo("experience")} />
         </NavigationBarGroup>
         <NavigationBarGroup>
-          <NavigationBarButton icon={props.region === "DE" ? DE : US} onClick={() => props.setRegion(props.region === "DE" ? "US" : "DE")} />
+          <NavigationBarButton icon={props.region === "DE" ? DE : US} label={props.translation.navigationBar.buttonLabels.language} onClick={() => props.setRegion(props.region === "DE" ? "US" : "DE")} />
         </NavigationBarGroup>
       </div>
     </div>

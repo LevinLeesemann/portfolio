@@ -11,6 +11,19 @@ export function getTranslation(region: string) {
 
 const translations: Record<string, Translation> = {
   english: {
+    navigationBar: {
+      buttonLabels: {
+        lightDarkMode: "Light/Dark Mode",
+        welcome: "Welcome",
+        projects: "Projects",
+        experience: "Experience",
+        language: "Language",
+      },
+      handleLabels: {
+        collapse: "Collapse Navigation",
+        expand: "Expand Navigation",
+      },
+    },
     welcomeSection: {
       title: {
         top: "Hi, I'm Levin!",
@@ -60,6 +73,19 @@ const translations: Record<string, Translation> = {
     },
   },
   german: {
+    navigationBar: {
+      buttonLabels: {
+        lightDarkMode: "Hell/Dunkel Modus",
+        welcome: "Willkommen",
+        projects: "Projekte",
+        experience: "Erfahrung",
+        language: "Sprache",
+      },
+      handleLabels: {
+        collapse: "Navigation einklappen",
+        expand: "Navigation ausklappen",
+      },
+    },
     welcomeSection: {
       title: {
         top: "Hi, ich bin Levin!",

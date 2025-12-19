@@ -56,7 +56,7 @@ export default function App() {
           </div>
           <Footer translation={translation} />
         </div>
-        <NavigationBar activeSection={activeSection} isDarkModeActive={isDarkModeActive} region={region} setIsDarkModeActive={setIsDarkModeActive} setRegion={setRegion} />
+        <NavigationBar activeSection={activeSection} isDarkModeActive={isDarkModeActive} region={region} setIsDarkModeActive={setIsDarkModeActive} setRegion={setRegion} translation={translation} />
       </div>
     </div>
   )
