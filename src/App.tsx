@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ContactForm from './components/ContactForm'
 import NavigationBar from './components/NavigationBar/NavigationBar'
 import { getTranslation } from './data/translations'
 import Experience from './sections/Experience'
@@ -9,6 +10,7 @@ import Welcome from './sections/Welcome'
 export default function App() {
   const [activeSection, setActiveSection] = useState("welcome")
   const [isDarkModeActive, setIsDarkModeActive] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches)
+  const [isContactModalActive, setIsContactModalActive] = useState(false)
   const [region, setRegion] = useState(navigator.language.split("-").at(-1)?.toUpperCase() ?? "US")
   const translation = getTranslation(region)
 
@@ -46,6 +48,10 @@ export default function App() {
   return (
     <div className={isDarkModeActive ? "dark" : ""}>
       <div className="bg-background">
+        <div className={isContactModalActive ? "" : "hidden"}>
+          <div onClick={() => setIsContactModalActive(false)} className="fixed size-full bg-background z-30 opacity-50" />
+          <ContactForm close={() => setIsContactModalActive(false)} isHidden={isContactModalActive} translation={translation} />
+        </div>
         <div className="flex flex-col px-[8%]">
           <div className="grow max-w-5xl mx-auto">
             <Welcome isDarkModeActive={isDarkModeActive} translation={translation} />
@@ -56,7 +62,7 @@ export default function App() {
           </div>
           <Footer translation={translation} />
         </div>
-        <NavigationBar activeSection={activeSection} isDarkModeActive={isDarkModeActive} region={region} setIsDarkModeActive={setIsDarkModeActive} setRegion={setRegion} translation={translation} />
+        <NavigationBar activeSection={activeSection} isDarkModeActive={isDarkModeActive} region={region} showContactModal={() => setIsContactModalActive(true)} setIsDarkModeActive={setIsDarkModeActive} setRegion={setRegion} translation={translation} />
       </div>
     </div>
   )

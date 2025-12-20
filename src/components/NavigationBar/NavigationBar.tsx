@@ -1,6 +1,6 @@
 import { DE, US } from "country-flag-icons/react/3x2"
 import { useEffect, useRef, useState } from "react"
-import { GoBriefcase, GoChevronUp, GoFileCode, GoMoon, GoSun } from "react-icons/go"
+import { GoBriefcase, GoChevronUp, GoFileCode, GoMail, GoMoon, GoSun } from "react-icons/go"
 import { PiHandWaving } from "react-icons/pi"
 import type { Translation } from "../../models/translation"
 import Tooltip from "../Tooltip"
@@ -12,6 +12,7 @@ type NavigationBarProps = {
   isDarkModeActive: boolean
   region: string
   setIsDarkModeActive: (isActive: boolean) => void
+  showContactModal: () => void
   setRegion: (region: string) => void
   translation: Translation
 }
@@ -71,14 +72,13 @@ export default function NavigationBar(props: NavigationBarProps) {
       </Tooltip>
       <div className="flex flex-row justify-center gap-2 pointer-events-none">
         <NavigationBarGroup>
-          <NavigationBarButton icon={props.isDarkModeActive ? GoMoon : GoSun} label={props.translation.navigationBar.buttonLabel.lightDarkMode} onClick={() => props.setIsDarkModeActive(!props.isDarkModeActive)} />
-        </NavigationBarGroup>
-        <NavigationBarGroup>
           <NavigationBarButton icon={PiHandWaving} isActive={props.activeSection === "welcome"} label={props.translation.navigationBar.buttonLabel.welcome} onClick={() => { goTo("welcome") }} />
           <NavigationBarButton icon={GoFileCode} isActive={props.activeSection === "projects"} label={props.translation.navigationBar.buttonLabel.projects} onClick={() => goTo("projects")} />
           <NavigationBarButton icon={GoBriefcase} isActive={props.activeSection === "experience"} label={props.translation.navigationBar.buttonLabel.experience} onClick={() => goTo("experience")} />
         </NavigationBarGroup>
         <NavigationBarGroup>
+          <NavigationBarButton icon={props.isDarkModeActive ? GoMoon : GoSun} label={props.translation.navigationBar.buttonLabel.lightDarkMode} onClick={() => props.setIsDarkModeActive(!props.isDarkModeActive)} />
+          <NavigationBarButton icon={GoMail} label={props.translation.navigationBar.buttonLabel.contact} onClick={props.showContactModal} />
           <NavigationBarButton icon={props.region === "DE" ? DE : US} label={props.translation.navigationBar.buttonLabel.language} onClick={() => props.setRegion(props.region === "DE" ? "US" : "DE")} />
         </NavigationBarGroup>
       </div>

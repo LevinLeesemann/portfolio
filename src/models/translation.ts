@@ -7,16 +7,34 @@ type TranslationProjects = Record<TranslationProjectId, { title: string; descrip
 export type Translation = {
   navigationBar: {
     buttonLabel: {
-      lightDarkMode: string
       welcome: string
       projects: string
       experience: string
+      lightDarkMode: string
+      contact: string
       language: string
     }
     handleLabel: {
       collapse: string
       expand: string
     }
+  }
+  contactForm: {
+    header: string,
+    email: {
+      label: string
+      placeholder: string
+    }
+    message: {
+      label: string
+      placeholder: string
+    }
+    buttonLabel: {
+      submit: string
+      cancel: string
+      close: string
+    }
+    thankYou: string
   }
   welcomeSection: {
     title: {

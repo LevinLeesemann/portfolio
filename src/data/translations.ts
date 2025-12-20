@@ -13,16 +13,34 @@ const translations: Record<string, Translation> = {
   english: {
     navigationBar: {
       buttonLabel: {
-        lightDarkMode: "Light/Dark Mode",
         welcome: "Welcome",
         projects: "Projects",
         experience: "Experience",
+        lightDarkMode: "Light/Dark Mode",
+        contact: "Contact",
         language: "Language",
       },
       handleLabel: {
         collapse: "Collapse Navigation",
         expand: "Expand Navigation",
       },
+    },
+    contactForm: {
+      header: "Contact",
+      email: {
+        label: "Email",
+        placeholder: "example@email.com",
+      },
+      message: {
+        label: "Message",
+        placeholder: "Write your message",
+      },
+      buttonLabel: {
+        submit: "Send",
+        cancel: "Cancel",
+        close: "Close",
+      },
+      thankYou: "Thank you for the message!",
     },
     welcomeSection: {
       title: {
@@ -129,16 +147,34 @@ const translations: Record<string, Translation> = {
   german: {
     navigationBar: {
       buttonLabel: {
-        lightDarkMode: "Hell/Dunkel Modus",
         welcome: "Willkommen",
         projects: "Projekte",
         experience: "Erfahrung",
+        lightDarkMode: "Hell/Dunkel Modus",
+        contact: "Kontakt",
         language: "Sprache",
       },
       handleLabel: {
         collapse: "Navigation einklappen",
         expand: "Navigation ausklappen",
       },
+    },
+    contactForm: {
+      header: "Kontakt",
+      email: {
+        label: "Email",
+        placeholder: "example@email.com",
+      },
+      message: {
+        label: "Nachricht",
+        placeholder: "Gib deine Nachricht ein",
+      },
+      buttonLabel: {
+        submit: "Senden",
+        cancel: "Abbrechen",
+        close: "Schließen",
+      },
+      thankYou: "Danke für die Nachricht!",
     },
     welcomeSection: {
       title: {
