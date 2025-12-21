@@ -1,3 +1,4 @@
+type ContactFormField = { missingMessage: string, label: string, placeholder: string }
 type Subtitle = { head: string, tail: string }
 type TranslationExperienceId = "seniorSoftwareEngineer" | "softwareEngineer" | "softwareEngineerII" | "softwareEngineerI" | "graduateTeachingAssistant" | "softwareEngineeringInternBackend" | "softwareEngineeringInternFrontend" | "softwareDevelopmentIntern"
 type TranslationExperiences = Record<TranslationExperienceId, { title: string; employer: string }>
@@ -21,14 +22,8 @@ export type Translation = {
   }
   contactForm: {
     header: string,
-    email: {
-      label: string
-      placeholder: string
-    }
-    message: {
-      label: string
-      placeholder: string
-    }
+    email: ContactFormField
+    message: ContactFormField
     buttonLabel: {
       submit: string
       cancel: string

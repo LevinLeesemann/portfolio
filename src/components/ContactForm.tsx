@@ -1,4 +1,4 @@
-import { useForm, ValidationError } from '@formspree/react'
+import { useForm } from '@formspree/react'
 import type { Translation } from '../models/translation'
 
 type ContactFormProps = {
@@ -9,6 +9,11 @@ type ContactFormProps = {
 
 export default function ContactForm(props: ContactFormProps) {
   const [state, handleSubmit] = useForm("xrezekpl")
+
+  const fieldErrors = state.errors?.getAllFieldErrors() ?? []
+
+  const hasError = (field: string) =>
+    fieldErrors.some(([name, errors]) => name === field && errors.length > 0)
 
   if (state.succeeded) {
     return (
@@ -31,13 +36,19 @@ export default function ContactForm(props: ContactFormProps) {
       <label htmlFor="email" className="text-text-muted">
         {props.translation.contactForm.email.label}
       </label>
+      {hasError("email") &&
+        <p className="text-xs text-red-500">
+          {props.translation.contactForm.email.missingMessage}
+        </p>}
       <input placeholder={props.translation.contactForm.email.placeholder} className="placeholder-text-muted border border-border rounded-lg w-full py-2 px-3 mb-2" id="email" type="email" name="email" />
-      <ValidationError prefix="Email" field="email" errors={state.errors} />
-      <label htmlFor="message" className="text-text-muted pl-1">
+      <label htmlFor="message" className="text-text-muted">
         {props.translation.contactForm.message.label}
       </label>
+      {hasError("message") &&
+        <p className="text-xs text-red-500">
+          {props.translation.contactForm.message.missingMessage}
+        </p>}
       <textarea placeholder={props.translation.contactForm.message.placeholder} className="placeholder-text-muted border border-border box-border rounded-lg size-full py-2 px-3 mb-2 resize-none" id="message" name="message" />
-      <ValidationError prefix="Message" field="message" errors={state.errors} />
       <div className="flex flex-row justify-between self-stretch">
         <button type="submit" className="py-2 px-4 hover:px-6 transition-[padding] duration-250 rounded-full bg-accent text-background hover:cursor-pointer active:bg-accent-muted" disabled={state.submitting}>
           {props.translation.contactForm.buttonLabel.submit}

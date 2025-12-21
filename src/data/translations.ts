@@ -28,10 +28,12 @@ const translations: Record<string, Translation> = {
     contactForm: {
       header: "Contact",
       email: {
+        missingMessage: "Email required",
         label: "Email",
         placeholder: "example@email.com",
       },
       message: {
+        missingMessage: "Message required",
         label: "Message",
         placeholder: "Write your message",
       },
@@ -162,10 +164,12 @@ const translations: Record<string, Translation> = {
     contactForm: {
       header: "Kontakt",
       email: {
+        missingMessage: "Email erforderlich",
         label: "Email",
         placeholder: "example@email.com",
       },
       message: {
+        missingMessage: "Nachricht erforderlich",
         label: "Nachricht",
         placeholder: "Gib deine Nachricht ein",
       },

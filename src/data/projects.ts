@@ -1,3 +1,11 @@
+import drumlineTranscriberDark from "../assets/projects/drumline-transcriber/dark.png"
+import drumlineTranscriberLight from "../assets/projects/drumline-transcriber/light.png"
+import jobPostingNotifierDark from "../assets/projects/job-posting-notifier/dark.png"
+import jobPostingNotifierLight from "../assets/projects/job-posting-notifier/light.png"
+import portfolioWebsiteDark from "../assets/projects/portfolio-website/dark.png"
+import portfolioWebsiteLight from "../assets/projects/portfolio-website/light.png"
+import tempusThumbnailDark from "../assets/projects/tempus/dark.png"
+import tempusThumbnailLight from "../assets/projects/tempus/light.png"
 import type { Project } from "../models/project"
 
 export const projects: Project[] = [
@@ -16,8 +24,8 @@ export const projects: Project[] = [
     ],
     technologies: ["iOS", "Android", "Flutter"],
     thumbnailUrl: {
-      dark: "/src/assets/projects/tempus/dark.png",
-      light: "/src/assets/projects/tempus/light.png",
+      dark: tempusThumbnailDark,
+      light: tempusThumbnailLight,
     },
   },
   {
@@ -39,8 +47,8 @@ export const projects: Project[] = [
     ],
     technologies: ["TensorFlow", "Librosa"],
     thumbnailUrl: {
-      dark: "/src/assets/projects/drumline-transcriber/dark.png",
-      light: "/src/assets/projects/drumline-transcriber/light.png",
+      dark: drumlineTranscriberDark,
+      light: drumlineTranscriberLight,
     },
   },
   {
@@ -54,8 +62,8 @@ export const projects: Project[] = [
     ],
     technologies: ["GCP", "Docker", "Terraform", "GHA"],
     thumbnailUrl: {
-      dark: "/src/assets/projects/job-posting-notifier/dark.png",
-      light: "/src/assets/projects/job-posting-notifier/light.png",
+      dark: jobPostingNotifierDark,
+      light: jobPostingNotifierLight,
     },
   },
   {
@@ -69,8 +77,8 @@ export const projects: Project[] = [
     ],
     technologies: ["React", "Tailwind", "Vite"],
     thumbnailUrl: {
-      dark: "/src/assets/projects/portfolio-website/dark.png",
-      light: "/src/assets/projects/portfolio-website/light.png",
+      dark: portfolioWebsiteDark,
+      light: portfolioWebsiteLight,
     },
   },
 ]
