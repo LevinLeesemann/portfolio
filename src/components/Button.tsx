@@ -2,9 +2,11 @@ type ButtonType = "button" | "submit"
 
 type ButtonProps = {
   children: React.ReactNode
+  className?: string
   disabled?: boolean
   onClick?: () => void
   type?: ButtonType
+  useCustomPadding?: boolean
 }
 
 type ButtonTheme = {
@@ -34,7 +36,7 @@ export default function Button(props: ButtonProps) {
   }
 
   return (
-    <button disabled={props.disabled} onClick={props.onClick} type={props.type} className={`${buttonTheme} rounded-full text-sm sm:text-base md-text-lg py-2 px-4 hover:px-6 hover:cursor-pointer transition-[gap,padding] duration-250 group`}>
+    <button disabled={props.disabled} onClick={props.onClick} type={props.type} className={`${props.className ? `${props.className} ` : ""}${props.useCustomPadding ? "" : "py-2 px-4 hover:px-6 "}${buttonTheme} rounded-full text-sm sm:text-base md-text-lg hover:cursor-pointer transition-[gap,padding] duration-250 group`}>
       {props.children}
     </button>
   )

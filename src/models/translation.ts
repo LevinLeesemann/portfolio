@@ -1,9 +1,10 @@
+import type { ProjectId } from "./project"
+import type { WorkExperienceId } from "./work-experience"
+
 type ContactFormField = { missingMessage: string, label: string, placeholder: string }
 type Subtitle = { head: string, tail: string }
-type TranslationExperienceId = "seniorSoftwareEngineer" | "softwareEngineer" | "softwareEngineerII" | "softwareEngineerI" | "graduateTeachingAssistant" | "softwareEngineeringInternBackend" | "softwareEngineeringInternFrontend" | "softwareDevelopmentIntern"
-type TranslationExperiences = Record<TranslationExperienceId, { title: string; employer: string }>
-type TranslationProjectId = "drumlineTranscriber" | "jobPostingNotifier" | "portfolioWebsite" | "tempus"
-type TranslationProjects = Record<TranslationProjectId, { title: string; description: string }>
+type TranslationExperiences = Record<WorkExperienceId, { title: string; employer: string }>
+type TranslationProjects = Record<ProjectId, { title: string; description: string }>
 
 export type Translation = {
   navigationBar: {
@@ -69,6 +70,9 @@ export type Translation = {
   }
   experiences: TranslationExperiences
   experienceSection: {
+    and: string
+    timelineEnd: string
+    timelineStart: string
     title: string
     subtitle: Subtitle
   }

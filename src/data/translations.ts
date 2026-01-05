@@ -105,8 +105,8 @@ const translations: Record<string, Translation> = {
         title: "Senior Software Engineer",
         employer: "John Deere",
       },
-      softwareEngineer: {
-        title: "Software Engineer",
+      softwareEngineerAudio: {
+        title: "Software Engineer - Audio",
         employer: "Kick Snare Hat Apps",
       },
       softwareEngineerII: {
@@ -133,8 +133,19 @@ const translations: Record<string, Translation> = {
         title: "Software Development Intern",
         employer: "University of Iowa",
       },
+      developerAudioEngineer: {
+        title: "Software Developer/Audio Engineer",
+        employer: "EON Reality",
+      },
+      intern: {
+        title: "Intern",
+        employer: "German Aerospace Center",
+      },
     },
     experienceSection: {
+      and: "and",
+      timelineEnd: "Career start",
+      timelineStart: "Present",
       title: "My main gigs",
       subtitle: {
         head: "For more details about each of my roles visit my",
@@ -243,8 +254,8 @@ const translations: Record<string, Translation> = {
         title: "Senior Software Engineer",
         employer: "John Deere",
       },
-      softwareEngineer: {
-        title: "Software Engineer",
+      softwareEngineerAudio: {
+        title: "Software Engineer - Audio",
         employer: "Kick Snare Hat Apps",
       },
       softwareEngineerII: {
@@ -271,8 +282,19 @@ const translations: Record<string, Translation> = {
         title: "Softwareentwickler Praktikant",
         employer: "Universität von Iowa",
       },
+      developerAudioEngineer: {
+        title: "Softwareentwickler/Audio Engineer",
+        employer: "EON Reality",
+      },
+      intern: {
+        title: "Praktikant",
+        employer: "Deutsches Zentrum für Luft- und Raumfahrt",
+      },
     },
     experienceSection: {
+      and: "und",
+      timelineEnd: "Karrierebeginn",
+      timelineStart: "Aktuell",
       title: "Meine Hauptjobs",
       subtitle: {
         head: "Für mehr Details zu meinen Jobs besuche mein",

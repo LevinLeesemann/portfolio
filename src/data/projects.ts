@@ -60,7 +60,7 @@ export const projects: Project[] = [
         url: "https://github.com/LevinLeesemann/job-posting-notifier",
       },
     ],
-    technologies: ["GCP", "Docker", "Terraform", "GHA"],
+    technologies: ["GCP", "Spring Boot", "Docker", "Terraform", "GitHub Actions"],
     thumbnailUrl: {
       dark: jobPostingNotifierDark,
       light: jobPostingNotifierLight,

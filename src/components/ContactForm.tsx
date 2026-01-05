@@ -1,4 +1,5 @@
 import { useForm } from '@formspree/react'
+import { GoX } from 'react-icons/go'
 import type { Translation } from '../models/translation'
 import Button from './Button'
 
@@ -31,6 +32,9 @@ export default function ContactForm(props: ContactFormProps) {
 
   return (
     <form className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-40 bg-background flex flex-col gap-2 items-start p-4 text-text text-sm sm:text-md md:text-lg w-xs sm:w-sm md:w-md lg:w-2xl h-112 sm:h-94 md:h-112 border border-border rounded-lg" onSubmit={event => { event.preventDefault(); void handleSubmit(event) }}>
+      <Button className="absolute right-4 p-1 size-8" onClick={props.close} useCustomPadding={true} type="button">
+        <GoX className="size-full" />
+      </Button>
       <p>
         {props.translation.contactForm.header}
       </p>

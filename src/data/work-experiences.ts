@@ -8,7 +8,7 @@ export const workExperiences: WorkExperience[] = [
     isActive: true,
   },
   {
-    id: "softwareEngineer",
+    id: "softwareEngineerAudio",
     specializationIds: ["systems", "backend"],
     typeIds: ["contract", "partTime"],
     isActive: true,
@@ -41,5 +41,14 @@ export const workExperiences: WorkExperience[] = [
     id: "softwareDevelopmentIntern",
     specializationIds: ["fullstack"],
     typeIds: ["internship", "partTime"],
+  },
+  {
+    id: "developerAudioEngineer",
+    specializationIds: ["systems"],
+    typeIds: ["fullTime"],
+  },
+  {
+    id: "intern",
+    typeIds: ["internship"],
   },
 ]

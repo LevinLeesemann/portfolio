@@ -47,27 +47,29 @@ export default function App() {
     return () => observer.disconnect()
   }, [activeSection])
 
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", isDarkModeActive)
+  }, [isDarkModeActive])
+
   return (
-    <div className={isDarkModeActive ? "dark" : ""}>
-      <div className="bg-background">
-        <NavigationBar activeSection={activeSection} translation={translation} />
-        <div className={isContactModalActive ? "" : "hidden"}>
-          <div onClick={() => setIsContactModalActive(false)} className="fixed size-full bg-background z-30 opacity-50" />
-          <ContactForm close={() => setIsContactModalActive(false)} isHidden={isContactModalActive} translation={translation} />
-        </div>
-        <SettingsBar isDarkModeActive={isDarkModeActive} region={region} setIsDarkModeActive={setIsDarkModeActive} setRegion={setRegion} translation={translation} />
-        <div className="flex flex-col px-[8%]">
-          <div className="grow max-w-5xl mx-auto">
-            <Welcome isDarkModeActive={isDarkModeActive} translation={translation} />
-            <div className="flex flex-col gap-32">
-              <Projects isDarkModeActive={isDarkModeActive} translation={translation} />
-              <Experience translation={translation} />
-            </div>
-          </div>
-          <Footer translation={translation} />
-        </div>
-        <ContactButton showContactModal={() => setIsContactModalActive(true)} translation={translation} />
+    <div>
+      <NavigationBar activeSection={activeSection} translation={translation} />
+      <div className={isContactModalActive ? "" : "hidden"}>
+        <div onClick={() => setIsContactModalActive(false)} className="fixed size-full bg-background z-30 opacity-50" />
+        <ContactForm close={() => setIsContactModalActive(false)} isHidden={isContactModalActive} translation={translation} />
       </div>
+      <SettingsBar isDarkModeActive={isDarkModeActive} region={region} setIsDarkModeActive={setIsDarkModeActive} setRegion={setRegion} translation={translation} />
+      <div className="flex flex-col px-[8%]">
+        <div className="grow max-w-5xl mx-auto">
+          <Welcome isDarkModeActive={isDarkModeActive} translation={translation} />
+          <div className="flex flex-col gap-32">
+            <Projects isDarkModeActive={isDarkModeActive} translation={translation} />
+            <Experience translation={translation} />
+          </div>
+        </div>
+        <Footer translation={translation} />
+      </div>
+      <ContactButton showContactModal={() => setIsContactModalActive(true)} translation={translation} />
     </div>
   )
 }

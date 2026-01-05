@@ -1,5 +1,6 @@
-type ProjectId = "drumlineTranscriber" | "jobPostingNotifier" | "portfolioWebsite" | "tempus"
 type ProjectResource = { labelId: "article" | "download" | "researchPaper" | "sourceCode", url: string }
+
+export type ProjectId = "drumlineTranscriber" | "jobPostingNotifier" | "portfolioWebsite" | "tempus"
 
 export type Project = {
   id: ProjectId

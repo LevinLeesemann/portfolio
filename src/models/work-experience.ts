@@ -1,6 +1,7 @@
-type WorkExperienceId = "seniorSoftwareEngineer" | "softwareEngineer" | "softwareEngineerII" | "softwareEngineerI" | "graduateTeachingAssistant" | "softwareEngineeringInternBackend" | "softwareEngineeringInternFrontend" | "softwareDevelopmentIntern"
 type WorkExperienceSpecializationId = "backend" | "frontend" | "fullstack" | "systems"
 type WorkExperienceTypeId = "fullTime" | "partTime" | "contract" | "internship"
+
+export type WorkExperienceId = "seniorSoftwareEngineer" | "softwareEngineerAudio" | "softwareEngineerII" | "softwareEngineerI" | "graduateTeachingAssistant" | "softwareEngineeringInternBackend" | "softwareEngineeringInternFrontend" | "softwareDevelopmentIntern" | "developerAudioEngineer" | "intern"
 
 export type WorkExperience = {
   id: WorkExperienceId

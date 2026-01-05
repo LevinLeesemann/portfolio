@@ -11,6 +11,7 @@ type WelcomeProps = {
 }
 
 export default function Welcome(props: WelcomeProps) {
+  const [isGifLoaded, setIsGifLoaded] = useState(false)
   const [height, setHeight] = useState(window.innerHeight)
   const [width, setWidth] = useState(window.innerWidth)
   const [scrollLocation, setScrollLocation] = useState(window.scrollY)
@@ -53,7 +54,7 @@ export default function Welcome(props: WelcomeProps) {
         </Subtitle>
       </section>
       <div className={`col-start-1 row-start-1 flex items-end justify-end w-full`} style={{ opacity: ((100 - Math.min(100, scrollLocation / 3)) / 100).toString() }}>
-        <img src={props.isDarkModeActive ? drummerDark : drummerLight} className={`blur-sm`} style={{ maxHeight: height }} />
+        <img src={props.isDarkModeActive ? drummerDark : drummerLight} className={`${isGifLoaded ? "" : "hidden"} blur-sm`} style={{ maxHeight: height }} onLoad={() => setIsGifLoaded(true)} />
       </div>
     </div>
   )
