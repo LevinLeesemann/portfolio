@@ -15,19 +15,19 @@ type ButtonTheme = {
 
 const buttonThemes: Record<ButtonType, ButtonTheme> = {
   button: {
-    background: "text",
-    backgroundHover: "text-muted",
-    text: "background",
+    background: "bg-text",
+    backgroundHover: "active:bg-text-muted",
+    text: "text-background",
   },
   submit: {
-    background: "accent",
-    backgroundHover: "accent-muted",
-    text: "background",
+    background: "bg-accent",
+    backgroundHover: "active:bg-accent-muted",
+    text: "text-background",
   },
 }
 
 export default function Button(props: ButtonProps) {
-  const buttonTheme = `text-${getButtonTheme().text} bg-${getButtonTheme().background} active:bg-${getButtonTheme().backgroundHover}`
+  const buttonTheme = `${getButtonTheme().text} ${getButtonTheme().background} ${getButtonTheme().backgroundHover}`
 
   function getButtonTheme() {
     return buttonThemes[props.type ?? "button"]
