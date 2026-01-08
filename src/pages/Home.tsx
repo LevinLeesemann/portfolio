@@ -3,7 +3,6 @@ import NavigationBar from "../components/NavigationBar"
 import type { Language } from "../models/language"
 import Experience from "../sections/Experience"
 import Footer from "../sections/Footer"
-import Posts from "../sections/Posts"
 import Projects from "../sections/Projects"
 import Welcome from "../sections/Welcome"
 
@@ -54,7 +53,7 @@ export default function Home(props: HomeProps) {
         <div className="flex flex-col gap-32">
           <Projects isDarkModeActive={props.isDarkModeActive} language={props.language} />
           <Experience language={props.language} />
-          <Posts language={props.language} />
+          {/* <Posts language={props.language} /> */}
         </div>
       </div>
       <Footer language={props.language} />
