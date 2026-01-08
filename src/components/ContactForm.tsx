@@ -25,7 +25,7 @@ export default function ContactForm(props: ContactFormProps) {
           {translations[props.language].contact.completed.message}
         </p>
         <button type="button" onClick={props.close} className="size-fit py-2 px-4 hover:px-6 transition-[padding] duration-250 rounded-full bg-accent text-background hover:cursor-pointer active:bg-accent-muted" disabled={state.submitting}>
-          {translations[props.language].contact.completed.message}
+          {translations[props.language].contact.completed.close}
         </button>
       </dialog>
     )
