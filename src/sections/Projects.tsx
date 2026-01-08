@@ -1,8 +1,8 @@
-import ProjectCard from "../components/ProjectCard/ProjectCard"
+import ProjectCard from "../components/Card/Card"
 import Subtitle from "../components/Subtitle"
 import SubtitleLink from "../components/SubtitleLink"
 import Title from "../components/Title"
-import { projects } from "../data/projects"
+import { projectResourceLabels, projects } from "../data/projects"
 import { translations } from "../data/translations"
 import { urls } from "../data/urls"
 import type { Language } from "../models/language"
@@ -20,7 +20,9 @@ export default function Projects(props: ProjectsProps) {
         {translations[props.language].section.projects.subtitle.head} <SubtitleLink label="GitHub" url={urls.github} /> {translations[props.language].section.projects.subtitle.tail}
       </Subtitle>
       <div className="grid gap-16 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
-        {projects.map(project => <ProjectCard key={project.id} isDarkModeActive={props.isDarkModeActive} project={project} language={props.language} />)}
+        {projects.map(project =>
+          <ProjectCard key={project.id} accentChipLabels={project.languages} chipLabels={project.technologies} description={project.description[props.language]} externalLinks={project.resources.map(resource => { return { label: projectResourceLabels[resource.labelId][props.language], url: resource.url } })} isDarkModeActive={props.isDarkModeActive} thumbnail={{ dark: project.thumbnailUrl.dark, light: project.thumbnailUrl.light }} title={project.title[props.language]} />,
+        )}
       </div>
     </section>
   )
