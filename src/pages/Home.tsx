@@ -9,6 +9,7 @@ import Welcome from "../sections/Welcome"
 type HomeProps = {
   isDarkModeActive: boolean
   language: Language
+  locale: string
 }
 
 export default function Home(props: HomeProps) {
@@ -46,15 +47,13 @@ export default function Home(props: HomeProps) {
   }, [activeSection])
 
   return (
-    <div className="flex flex-col px-[8%]">
-      <NavigationBar activeSection={activeSection} language={props.language}/>
-      <div className="grow max-w-5xl mx-auto">
-        <Welcome isDarkModeActive={props.isDarkModeActive} language={props.language} />
-        <div className="flex flex-col gap-32">
-          <Projects isDarkModeActive={props.isDarkModeActive} language={props.language} />
-          <Experience language={props.language} />
-          <Posts language={props.language} />
-        </div>
+    <div>
+      <NavigationBar activeSection={activeSection} language={props.language} />
+      <Welcome isDarkModeActive={props.isDarkModeActive} language={props.language} />
+      <div className="flex flex-col gap-32">
+        <Projects isDarkModeActive={props.isDarkModeActive} language={props.language} />
+        <Experience language={props.language} />
+        {import.meta.env.DEV && <Posts isDarkModeActive={props.isDarkModeActive} language={props.language} locale={props.locale} />}
       </div>
     </div>
   )

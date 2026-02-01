@@ -54,8 +54,10 @@ export const translations: Record<Language, Translation> = {
         },
       },
       posts: {
-        title: "Lessons learned",
+        new: "New",
+        readMore: "Read more",
         subtitle: "From technical challenges to key design decisions",
+        title: "Lessons learned",
       },
       projects: {
         title: "Outside of work",
@@ -73,6 +75,7 @@ export const translations: Record<Language, Translation> = {
       },
     },
     post: {
+      home: "Home",
       notFound: {
         title: "Missed the beat",
         subtitle: {
@@ -140,8 +143,10 @@ export const translations: Record<Language, Translation> = {
         },
       },
       posts: {
-        title: "Meine Erkenntnisse",
+        new: "Neu",
+        readMore: "Weiterlesen",
         subtitle: "Von technischen Herausforderungen bis zu zentralen Designentscheidungen",
+        title: "Meine Erkenntnisse",
       },
       projects: {
         title: "Außerhalb der Arbeit",
@@ -159,6 +164,7 @@ export const translations: Record<Language, Translation> = {
       },
     },
     post: {
+      home: "Startseite",
       notFound: {
         title: "Den Einsatz verpasst",
         subtitle: {

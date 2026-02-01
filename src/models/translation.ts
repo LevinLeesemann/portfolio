@@ -45,19 +45,22 @@ export type Translation = {
       subtitle: Split
     }
     posts: {
-      title: string
+      new: string
+      readMore: string
       subtitle: string
+      title: string
     }
     projects: {
       title: string
       subtitle: Split
     }
     welcome: {
-      title: Split 
+      title: Split
       subtitle: string
     }
   }
   post: {
+    home: string
     notFound: {
       title: string
       subtitle: Split

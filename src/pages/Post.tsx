@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react"
+import Markdown from "react-markdown"
 import { useNavigate, useParams } from "react-router-dom"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import { oneDark, oneLight } from "react-syntax-highlighter/dist/esm/styles/prism"
+import HomeButton from "../components/HomeButton"
 import Subtitle from "../components/Subtitle"
 import Title from "../components/Title"
 import { posts } from "../data/posts"
@@ -7,6 +11,7 @@ import { translations } from "../data/translations"
 import type { Language } from "../models/language"
 
 type PostProps = {
+  isDarkModeActive: boolean
   language: Language
 }
 
@@ -50,9 +55,66 @@ export default function Post(props: PostProps) {
     )
   }
 
-  return (
-    <div style={{ minHeight: height }}>
+  const { isDarkModeActive } = props
 
-    </div>
+  return (
+    <div>
+      <HomeButton language={props.language} />
+      <article>
+        <header style={{ minHeight: height }} className="flex flex-col justify-center gap-4">
+          <h1 className="w-fit font-bold text-text text-3xl sm:text-4xl md:text-5xl">
+            {post.title[props.language]}
+          </h1>
+          <hr className="border-accent" />
+          <p className="text-text-muted text-md sm:text-lg md:text-xl lg:text-2xl">
+            {post.preview[props.language]}
+          </p>
+        </header>
+        <div className="flex flex-col gap-32">
+          {
+            post.sections.map(section =>
+              <section id={section.id} key={section.id} className="flex flex-col gap-8">
+                <div className="flex flex-row gap-4 items-center">
+                  <div className="relative size-2 rounded-full bg-accent" />
+                  <h2 className="w-fit text-text text-2xl sm:text-3xl md:text-4xl hover:cursor-pointer">
+                    <a onClick={() => window.location.replace(`#${section.id}`)}>
+                      {section.title[props.language]}
+                    </a>
+                  </h2>
+                </div>
+                <div className="flex flex-col gap-8 font-light text-text text-base sm:text-lg md:text-xl lg:text-2xl">
+                  <Markdown
+                    components={{
+                      a: ({ ...props }) => (
+                        <a
+                          {...props}
+                          className="underline text-accent"
+                          target="_blank"
+                        />
+                      ),
+                      code({ children, className }) {
+                        const match = /language-(\w+)/.exec(className ?? "")
+                        const codeString =
+                          typeof children === "string" || typeof children === "number"
+                            ? String(children).replace(/\n$/, "")
+                            : ""
+
+                        return match ?
+                          <SyntaxHighlighter language={match[1]} style={isDarkModeActive ? oneDark : oneLight}>
+                            {codeString}
+                          </SyntaxHighlighter> :
+                          <code className={className}>{children}</code>
+                      },
+                    }}
+                  >
+                    {section.content[props.language]}
+                  </Markdown>
+                </div>
+              </section>,
+            )
+          }
+        </div>
+      </article >
+    </div >
   )
 }

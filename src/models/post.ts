@@ -1,13 +1,17 @@
+import type { ThumbnailUrl } from "./thumbnail-url"
 import type { Translated } from "./translation"
 
-interface PostSection {
-  title: string
-  content: string
-}
-
-export interface Post {
+export type Post = {
   id: string
   title: Translated<string>
-  subtitle: Translated<string>
-  sections: Translated<PostSection>[]
+  datePosted: Date
+  preview: Translated<string>
+  sections: PostSection[]
+  thumbnailUrl: ThumbnailUrl
+}
+
+type PostSection = {
+  id: string
+  title: Translated<string>
+  content: Translated<string>
 }
