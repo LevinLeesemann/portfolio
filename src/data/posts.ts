@@ -4,9 +4,9 @@ import type { Post } from "../models/post"
 
 export const posts: Post[] = [
   {
-    id: "audio-engine-part-i",
+    id: "five-things-i-learned-building-a-cross-platform-audio-engine",
     title: {
-      english: "5 Things I learned Building a Cross-platform Audio Engine",
+      english: "5 Things I Learned Building a Cross-Platform Audio Engine",
       german: "Audio-Engine — Teil I",
     },
     datePosted: new Date(2025, 1, 3),
