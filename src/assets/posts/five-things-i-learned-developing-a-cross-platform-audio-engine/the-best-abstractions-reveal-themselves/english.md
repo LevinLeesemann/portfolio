@@ -1,0 +1,9 @@
+For most of the project’s duration, the native layers for each platform shared very little code. Each one was developed alongside a small test harness application, which made it easier to focus on the platform-specific details without the additional complexity of a full consumer app, only sharing a Kotlin Multiplatform interface to streamline interaction.
+
+Over time, patterns began to surface. The high-level behavior of starting and stopping audio, managing producer and consumer threads, and responding to platform callbacks was similar everywhere, even though the exact mechanics differed. At the same time, assumptions that held on one platform often didn’t hold on another, particularly around buffer sizing, lifecycle events, and threading.
+
+Rather than rushing to abstract these similarities, the implementations were allowed to evolve independently while the underlying responsibilities became clearer. As those differences settled, it became easier to identify which pieces of logic were genuinely shared, and which needed to remain platform-specific.
+
+At that point, Kotlin Multiplatform, which had initially been used only to define interfaces, took on a larger role coordinating behavior within the native layers. This shift was supported by test-driven development, which made it safer to extract and refactor logic without changing externally visible behavior.
+
+This process also highlighted the value of early, imperfect implementations. Letting the foundations settle made it easier to see which responsibilities naturally belonged together, and which abstractions were actually pulling their weight. By the time shared code was introduced, it reflected behavior that had already proven useful across all platforms, simplifying the surface area exposed to consumers while keeping the platform-facing interfaces modular and explicit.

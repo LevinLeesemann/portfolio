@@ -1,0 +1,3 @@
+This project began with the opportunity to build a cross-platform real-time audio engine for Kick Snare Hat Apps, spanning iOS, Android, and the web. Bringing those platforms together under real-time audio constraints surfaced questions that weren't so obvious from the get-go. 
+
+Many of the decisions that ended up shaping the engine only became clear once early prototypes were pushed to their limits. Some issues revealed themselves through experimentation, others through quirks in individual platforms, and a few through simply seeing where assumptions didn’t hold. This post highlights a handful of those lessons, and how they helped guide the architecture toward something stable, extensible, and maintainable.

@@ -1,0 +1,3 @@
+Dieses Projekt begann, als sich mir die Chance bot, eine plattformübergreifende Echtzeit-Audio-Engine für Kick Snare Hat Apps zu bauen – für iOS, Android und Web. Echtzeit-Audio über mehrere Plattformen zusammenzubringen, hat einige Fragen aufgeworfen, die nicht sofort offensichtlich waren.
+
+Viele der Entscheidungen, die die Engine letztlich geprägt haben, wurden erst klar, als frühe Prototypen an ihre Grenzen kamen. Manche Probleme zeigten sich durch Experimentieren, andere durch Eigenheiten einzelner Plattformen, und einige durch einfaches Ausprobieren, wo Annahmen nicht hielten. In diesem Beitrag teile ich einige dieser Lessons Learned und wie sie geholfen haben, die Architektur stabil, erweiterbar und wartbar zu machen.

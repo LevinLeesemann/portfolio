@@ -1,0 +1,3 @@
+There are still areas of the engine that will continue to evolve, particularly as it moves beyond generated audio and into more complex playback and sequencing scenarios. What the project has already reinforced however, is how strongly real-world constraints shape systems like this.
+
+Many of the decisions that mattered most were not obvious at the start, and several only became clear after building something that did not quite hold up. Tackling a project like this almost requires a certain level of naivety and a willingness to dive in before the full complexity is clear, and working through those iterations rather than avoiding them proved crucial for shaping a stable and extensible system.

@@ -1,0 +1,11 @@
+At a high level, the mechanics of real-time audio are relatively straightforward: audio is represented as a stream of floating-point samples, those samples are grouped into buffers, and the platform pulls those buffers at a regular interval that is closely tied to the underlying hardware. When looking at platform-to-platform differences in terms of API availability, it becomes clear that this simple model places fairly strict requirements on how systems around it can be structured.
+
+One of the key factors here is how platforms consume audio data. This is typically done via a platform-owned audio thread, which needs to predictably be fed audio data without blocking. Operations that are common elsewhere in an application, such as allocating memory or performing I/O, are not feasible here. Even temporally deterministic work can cause audible artifacts if left unchecked.
+
+This naturally pushes the design towards a producer–consumer model. In this case, one backed by a ring buffer, an approach commonly used in applications such as DAWs to retain a small, but efficient, memory footprint. With this approach, the producer stays slightly ahead of the consumer to ensure that audio data is always available when the platform requests it.
+
+While the general pattern is well understood, implementing it in a way that works reliably across platforms requires paying close attention to how and where state is stored, how threads are managed, and how the system can remain responsive to user input.
+
+Something that became apparent fairly early on was that these constraints are not unique to any one platform. Whether the consumer is an AudioWorklet on the web, an Audio Unit render callback on iOS, or an Oboe callback on Android, the same basic rules apply. Once those rules were treated as fixed points rather than obstacles to uniquely work around, a common architecture becomes apparent.
+
+A platform-owned audio thread remains solely responsible for consuming audio data at a regular interval, a dedicated producer thread stays ahead of it, preparing buffers as needed, and the main application thread is left free to manage state changes in order to retain responsiveness. Keeping these concerns isolated makes it easier to reason about timing-sensitive behavior, while still enabling more complex interaction with the audio engine from the outside.
