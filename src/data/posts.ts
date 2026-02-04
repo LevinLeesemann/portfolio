@@ -1,5 +1,5 @@
-import choosingTheLanguageYouNeedToSpeakEnglish from "../assets/posts/five-things-i-learned-developing-a-cross-platform-audio-engine/choosing-the-language-you-need-to-speak/english.md?raw"
-import choosingTheLanguageYouNeedToSpeakGerman from "../assets/posts/five-things-i-learned-developing-a-cross-platform-audio-engine/choosing-the-language-you-need-to-speak/german.md?raw"
+import choosingTheRightLanguageMattersEnglish from "../assets/posts/five-things-i-learned-developing-a-cross-platform-audio-engine/choosing-the-right-language-matters/english.md?raw"
+import choosingTheRightLanguageMattersGerman from "../assets/posts/five-things-i-learned-developing-a-cross-platform-audio-engine/choosing-the-right-language-matters/german.md?raw"
 import conclusionEnglish from "../assets/posts/five-things-i-learned-developing-a-cross-platform-audio-engine/conclusion/english.md?raw"
 import conclusionGerman from "../assets/posts/five-things-i-learned-developing-a-cross-platform-audio-engine/conclusion/german.md?raw"
 import eachPlatformMustThreadItsOwnNeedleEnglish from "../assets/posts/five-things-i-learned-developing-a-cross-platform-audio-engine/each-platform-must-thread-its-own-needle/english.md?raw"
@@ -52,14 +52,14 @@ export const posts: Post[] = [
         },
       },
       {
-        id: "choosing-the-language-you-need-to-speak",
+        id: "choosing-the-right-language-matters",
         title: {
           english: "2. Choosing the Right Language Matters",
           german: "2 Die Sprache bestimmt die Möglichkeiten",
         },
         content: {
-          english: choosingTheLanguageYouNeedToSpeakEnglish,
-          german: choosingTheLanguageYouNeedToSpeakGerman,
+          english: choosingTheRightLanguageMattersEnglish,
+          german: choosingTheRightLanguageMattersGerman,
         },
       },
       {

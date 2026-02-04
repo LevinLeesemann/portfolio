@@ -2,7 +2,7 @@ The web was chosen as the first platform to integrate not because it was expecte
 
 Getting even a minimal setup working involved several layers: a small Kotlin Multiplatform interface defining how a consumer interacts with the engine, a TypeScript-based native layer, and a WebAssembly build of the Rust core.
 
-Simply sharing memory between TypeScript, Rust, and Web Workers, already turned out to be non-trivial, and early attempts relied on global statics in Rust to make experimentation possible. However, that approach worked well enough for a proof of concept.
+Simply sharing memory between TypeScript, Rust, and Web Workers already turned out to be non-trivial, and early attempts relied on global statics in Rust to make experimentation possible. However, that approach worked well enough for a proof of concept.
 
 It quickly became apparent though, that this implementation wouldn’t scale. Parts of the WASM module would be reinitialized unexpectedly, and managing shared state without careful coordination led to brittle behavior. A significant amount of time was spent reading documentation, experimenting, and refining the integration before basic playback became reliable.
 

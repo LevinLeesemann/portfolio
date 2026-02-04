@@ -1,9 +1,9 @@
-Native Layers: kaum shared Code. Jede Layer + kleine Test Harness App → Fokus auf Plattform Details, nur KMP Interface für Interaction.
+Über den Großteil des Projekts hinweg teilten die nativen Layer sehr wenig Code. Jeder wurde zusammen mit einer kleinen Test-Harness-App entwickelt, wodurch man sich auf plattformspezifische Details konzentrieren konnte, ohne die Komplexität einer vollständigen Consumer-App. Gemeinsam genutzt wurde nur ein Kotlin Multiplatform-Interface für die Interaktion.
 
-Mit der Zeit traten Patterns auf: Start/Stop Audio, Producer/Consumer Threads, Platform Callbacks = ähnlich, Mechanics differieren. Annahmen hielten Plattform-übergreifend nicht, z.B. Buffer Size, Lifecycle, Threading.
+Im Laufe der Zeit traten Muster hervor. Das Starten und Stoppen von Audio, die Verwaltung von Producer- und Consumer-Threads und das Reagieren auf Plattform-Callbacks war überall ähnlich, obwohl die genauen Mechaniken unterschiedlich waren. Gleichzeitig hielten Annahmen auf einer Plattform oft nicht auf einer anderen, besonders bei Buffer-Größe, Lifecycle-Ereignissen und Threading.
 
-Nicht zu früh abstrahieren, Layer allowed independently zu evolve, Responsibilities wurden klarer → leichter shared logic erkennen.
+Anstatt diese Ähnlichkeiten zu früh zu abstrahieren, wurden die Implementierungen unabhängig weiterentwickelt, während die Verantwortlichkeiten klarer wurden. So konnte man leichter erkennen, welche Logik wirklich geteilt werden konnte und welche plattformspezifisch bleiben musste.
 
-KMP, ursprünglich nur für Interfaces, übernahm größere Rolle: Koordination in Native Layers. Supported durch TDD → refactor sicher ohne extern sichtbare Changes.
+Zu diesem Zeitpunkt übernahm Kotlin Multiplatform, das ursprünglich nur Interfaces definiert hatte, eine größere Rolle bei der Koordination innerhalb der nativen Layer. Testgetriebene Entwicklung (TDD) unterstützte diese Änderung, da Logik sicher extrahiert und refaktoriert werden konnte, ohne extern sichtbares Verhalten zu verändern.
 
-Early Imperfect Implementations = wertvoll. Foundations setzen → erkennen, welche Responsibilities zusammengehören, welche Abstractions sinnvoll. Shared Code = bewährtes Verhalten auf allen Plattformen, Oberfläche für Consumer simplified, Native Interfaces modular und explicit.
+Dieser Prozess zeigte auch den Wert früher, unperfekter Implementierungen. Durch das Setzen von Grundlagen wurde klarer, welche Verantwortlichkeiten zusammengehören und welche Abstraktionen tatsächlich nützlich sind. Als gemeinsamer Code eingeführt wurde, spiegelte er Verhalten wider, das sich bereits auf allen Plattformen bewährt hatte, was die Oberfläche für Consumer vereinfachte und gleichzeitig die plattform-spezifischen Interfaces modular und explizit hielt.
