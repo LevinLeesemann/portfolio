@@ -7,3 +7,5 @@ Web and iOS have different execution models where integrating generated Kotlin M
 That left a relatively small set of options for the core audio engine. C++ is the obvious choice in this space, but Rust had been gaining traction as a systems language with strong guarantees around memory safety, performance, developer ergonomics, as well as a C-compatible [ABI](https://en.wikipedia.org/wiki/Application_binary_interface). While it wasn’t widely used in mainstream audio applications at the time either, it offered an opportunity to work in an already familiar domain with a new language.
 
 Once Rust was chosen for the core, it became clear that the interface between the core and the native layers needed to be treated as part of the design rather than an implementation detail. Decisions about how memory is allocated, how instances are created and destroyed, how state is passed back and forth, and how macros could be leveraged to reduce [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface) boilerplate ended up being just as important as the audio processing logic that Rust itself would be responsible for.
+
+![architecture](./architecture-english.png)

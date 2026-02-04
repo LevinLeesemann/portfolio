@@ -7,3 +7,5 @@ Web und iOS haben andere Ausführungsmodelle. Kotlin Multiplatform-Code lässt s
 Damit blieb eine überschaubare Menge an Optionen für die Kern-Audio-Engine. C++ wäre die naheliegende Wahl, aber Rust gewann zunehmend Aufmerksamkeit als System-Sprache mit starken Garantien in puncto Speicher-Sicherheit, Performance, Entwickler-Ergonomie und C-kompatiblem [ABI](https://de.wikipedia.org/wiki/Bin%C3%A4rschnittstelle). Obwohl es zu diesem Zeitpunkt noch nicht weit verbreitet in Mainstream-Audio-Apps war, bot es die Chance, in einem mir vertrauten Bereich mit einer neuen Sprache zu arbeiten.
 
 Als Rust für den Core gewählt wurde, wurde klar, dass das Interface zwischen Core und den nativen Layern als Teil des Designs behandelt werden muss und nicht nur als Implementierungsdetail. Entscheidungen über Speicherallokation, Instanziierung und Zerstörung, Status-Übergabe und die Nutzung von Makros zur Reduzierung von [FFI](https://en.wikipedia.org/wiki/Foreign_function_interface)-Boilerplate waren genauso wichtig wie die Audio-Verarbeitungslogik selbst.
+
+![architektur](./architecture-german.png)
