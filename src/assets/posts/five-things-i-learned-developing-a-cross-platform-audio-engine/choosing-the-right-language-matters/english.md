@@ -2,7 +2,7 @@ A significant early question was where the shared audio logic should live and wh
 
 On Android in particular, the fact that the primary audio API is written in C++ introduces an extra boundary. Calling into it from Kotlin requires going through JNI, and more importantly, the garbage-collected environment of the JVM makes it near impossible to reason about timing-sensitive behavior.
 
-Web and iOS have different execution models where integrating generated Kotlin Multiplatform code into their audio paths is technically possible, it would yield diverging paths in a project that is otherwise aiming to unify as much shared implementation as possible.
+Web and iOS have different execution models where integrating generated Kotlin Multiplatform code into their audio paths is technically possible, however it would yield diverging paths in a project that is otherwise aiming to unify as much shared implementation as possible.
 
 That left a relatively small set of options for the core audio engine. C++ is the obvious choice in this space, but Rust had been gaining traction as a systems language with strong guarantees around memory safety, performance, developer ergonomics, as well as a C-compatible [ABI](https://en.wikipedia.org/wiki/Application_binary_interface). While it wasn’t widely used in mainstream audio applications at the time either, it offered an opportunity to work in an already familiar domain with a new language.
 

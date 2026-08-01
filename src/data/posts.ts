@@ -23,7 +23,7 @@ export const posts: Post[] = [
       english: "5 Things I Learned Building a Cross-Platform Audio Engine",
       german: "5 Erkenntnisse aus dem Bau einer plattformübergreifenden Audio-Engine",
     },
-    datePosted: new Date(2025, 1, 3),
+    datePosted: new Date(2026, 1, 3),
     preview: {
       english: "A deep dive into the practical lessons learned while building a cross-platform real-time audio engine for web, iOS, and Android, covering language choices, threading, and shared abstractions",
       german: "Ein Einblick in die praktischen Lektionen beim Aufbau einer plattformübergreifenden Echtzeit-Audio-Engine für Web, iOS und Android, mit Fokus auf Sprachwahl, Threading und wiederverwendbare Logik",
