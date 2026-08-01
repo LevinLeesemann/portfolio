@@ -2,16 +2,16 @@ import type { WorkExperience, WorkExperienceSpecializations, WorkExperienceTypes
 
 export const workExperiences: WorkExperience[] = [
   {
-    id: "senior-software-engineer",
+    id: "backend-engineer-ii",
     title: {
-      english: "Senior Software Engineer",
-      german: "Senior Software Engineer",
+      english: "Backend Engineer II",
+      german: "Backend Engineer II",
     },
     employer: {
-      english: "John Deere",
-      german: "John Deere",
+      english: "Spotify",
+      german: "Spotify",
     },
-    specializationIds: ["backend"],
+    specializationIds: ["backend", "data"],
     typeIds: ["full-time"],
     isActive: true,
   },
@@ -28,6 +28,19 @@ export const workExperiences: WorkExperience[] = [
     specializationIds: ["systems", "backend"],
     typeIds: ["contract", "part-time"],
     isActive: true,
+  },
+  {
+    id: "senior-software-engineer",
+    title: {
+      english: "Senior Software Engineer",
+      german: "Senior Software Engineer",
+    },
+    employer: {
+      english: "John Deere",
+      german: "John Deere",
+    },
+    specializationIds: ["backend"],
+    typeIds: ["full-time"],
   },
   {
     id: "software-engineer-ii",
@@ -119,19 +132,6 @@ export const workExperiences: WorkExperience[] = [
     specializationIds: ["systems"],
     typeIds: ["full-time"],
   },
-  {
-    id: "intern",
-    title: {
-      english: "Intern",
-      german: "Praktikant",
-    },
-    employer: {
-      english: "German Aerospace Center",
-      german: "Deutsches Zentrum für Luft- und Raumfahrt",
-    },
-    specializationIds: ["embedded"],
-    typeIds: ["internship"],
-  },
 ]
 
 export const workExperienceSpecializations: WorkExperienceSpecializations = {
@@ -139,9 +139,9 @@ export const workExperienceSpecializations: WorkExperienceSpecializations = {
     english: "Backend",
     german: "Backend",
   },
-  embedded: {
-    english: "Embedded",
-    german: "Embedded",
+  data: {
+    english: "Data",
+    german: "Data",
   },
   frontend: {
     english: "Frontend",

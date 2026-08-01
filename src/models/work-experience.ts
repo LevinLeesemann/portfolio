@@ -13,6 +13,6 @@ export type WorkExperienceSpecializations = Record<WorkExperienceSpecializationI
 
 export type WorkExperienceTypes = Record<WorkExperienceTypeId, Translated<string>>
 
-type WorkExperienceSpecializationId = "backend" | "embedded" | "frontend" | "fullstack" | "systems"
+type WorkExperienceSpecializationId = "backend" | "data" | "frontend" | "fullstack" | "systems"
 
 type WorkExperienceTypeId = "full-time" | "part-time" | "contract" | "internship"
