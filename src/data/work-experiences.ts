@@ -69,18 +69,6 @@ export const workExperiences: WorkExperience[] = [
     typeIds: ["full-time"],
   },
   {
-    id: "graduate-teaching-assistant",
-    title: {
-      english: "Graduate Teaching Assistant",
-      german: "Wissenschaftliche Hilfskraft",
-    },
-    employer: {
-      english: "University of Iowa",
-      german: "Universität von Iowa",
-    },
-    typeIds: ["part-time"],
-  },
-  {
     id: "software-engineering-intern-backend",
     title: {
       english: "Software Engineering Intern",
@@ -118,19 +106,6 @@ export const workExperiences: WorkExperience[] = [
     },
     specializationIds: ["fullstack"],
     typeIds: ["internship", "part-time"],
-  },
-  {
-    id: "software-developer-audio-engineer",
-    title: {
-      english: "Software Developer/Audio Engineer",
-      german: "Softwareentwickler/Audio Engineer",
-    },
-    employer: {
-      english: "EON Reality",
-      german: "EON Reality",
-    },
-    specializationIds: ["systems"],
-    typeIds: ["full-time"],
   },
 ]
 
