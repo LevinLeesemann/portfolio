@@ -46,16 +46,16 @@ export default function Welcome(props: WelcomeProps) {
   return (
     <div className="grid grid-cols-1 grid-rows-1">
       <section id="welcome" style={{ minHeight: height }} className="col-start-1 row-start-1 z-10 flex flex-col gap-2 justify-center">
-        <Title>
+        <Title className="animate-entrance">
           {translations[props.language].section.welcome.title.head}<br />
           {translations[props.language].section.welcome.title.tail}
         </Title>
-        <Subtitle isUnmuted={true}>
+        <Subtitle className="animate-entrance [animation-delay:750ms]" isUnmuted={true}>
           {translations[props.language].section.welcome.subtitle}
         </Subtitle>
       </section>
       <div className={`col-start-1 row-start-1 flex items-end justify-end w-full`} style={{ opacity: ((100 - Math.min(100, scrollLocation / 4)) / 100).toString() }}>
-        <img src={props.isDarkModeActive ? drummerDark : drummerLight} className={`${isGifLoaded ? "" : "hidden"} blur-sm opacity-50`} style={{ maxHeight: height }} onLoad={() => setIsGifLoaded(true)} />
+        <img src={props.isDarkModeActive ? drummerDark : drummerLight} className={`${isGifLoaded ? "opacity-50" : "opacity-0"} blur-sm transition-opacity duration-5000 delay-1000`} style={{ maxHeight: height }} onLoad={() => setIsGifLoaded(true)} />
       </div>
     </div>
   )

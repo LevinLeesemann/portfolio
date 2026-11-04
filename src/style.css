@@ -3,6 +3,20 @@
 @theme inline {
   --font-sans: "Roboto", system-ui, sans-serif;
 
+  --animate-entrance: fade-in 2000ms ease-out both, rise 500ms ease-out both;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  @keyframes rise {
+    from {
+      translate: 0 1rem;
+    }
+  }
+
   --color-accent: var(--accent);
   --color-accent-muted: var(--accent-muted);
   --color-background: var(--background);
