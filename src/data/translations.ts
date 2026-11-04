@@ -146,7 +146,7 @@ export const translations: Record<Language, Translation> = {
         new: "Neu",
         readMore: "Weiterlesen",
         subtitle: "Von technischen Herausforderungen bis zu zentralen Designentscheidungen",
-        title: "Meine Erkenntnisse",
+        title: "Erkenntnisse",
       },
       projects: {
         title: "Außerhalb der Arbeit",
