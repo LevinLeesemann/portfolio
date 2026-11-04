@@ -1,4 +1,8 @@
-import type { WorkExperience, WorkExperienceSpecializations, WorkExperienceTypes } from "../models/work-experience"
+import johnDeere from "../assets/employers/john-deere.svg"
+import kickSnareHatApps from "../assets/employers/kick-snare-hat-apps.png"
+import spotify from "../assets/employers/spotify.svg"
+import universityOfIowa from "../assets/employers/university-of-iowa.png"
+import type { WorkExperience, WorkExperienceEmployers, WorkExperienceSpecializations } from "../models/work-experience"
 
 export const workExperiences: WorkExperience[] = [
   {
@@ -7,12 +11,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Backend Engineer II",
       german: "Backend Engineer II",
     },
-    employer: {
-      english: "Spotify",
-      german: "Spotify",
-    },
+    employerId: "spotify",
     specializationIds: ["backend", "data"],
-    typeIds: ["full-time"],
     isActive: true,
   },
   {
@@ -21,12 +21,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Software Engineer - Audio",
       german: "Software Engineer - Audio",
     },
-    employer: {
-      english: "Kick Snare Hat Apps",
-      german: "Kick Snare Hat Apps",
-    },
+    employerId: "kick-snare-hat-apps",
     specializationIds: ["systems", "backend"],
-    typeIds: ["contract", "part-time"],
     isActive: true,
   },
   {
@@ -35,12 +31,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Senior Software Engineer",
       german: "Senior Software Engineer",
     },
-    employer: {
-      english: "John Deere",
-      german: "John Deere",
-    },
+    employerId: "john-deere",
     specializationIds: ["backend"],
-    typeIds: ["full-time"],
   },
   {
     id: "software-engineer-ii",
@@ -48,12 +40,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Software Engineer II",
       german: "Software Engineer II",
     },
-    employer: {
-      english: "John Deere",
-      german: "John Deere",
-    },
+    employerId: "john-deere",
     specializationIds: ["backend", "frontend"],
-    typeIds: ["full-time"],
   },
   {
     id: "software-engineer-i",
@@ -61,12 +49,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Software Engineer I",
       german: "Software Engineer I",
     },
-    employer: {
-      english: "John Deere",
-      german: "John Deere",
-    },
+    employerId: "john-deere",
     specializationIds: ["backend"],
-    typeIds: ["full-time"],
   },
   {
     id: "software-engineering-intern-backend",
@@ -74,12 +58,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Software Engineering Intern",
       german: "Software Engineer Praktikant",
     },
-    employer: {
-      english: "John Deere",
-      german: "John Deere",
-    },
+    employerId: "john-deere",
     specializationIds: ["backend"],
-    typeIds: ["internship"],
   },
   {
     id: "software-engineering-intern-fullstack",
@@ -87,12 +67,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Software Engineering Intern",
       german: "Software Engineer Praktikant",
     },
-    employer: {
-      english: "John Deere",
-      german: "John Deere",
-    },
+    employerId: "john-deere",
     specializationIds: ["fullstack"],
-    typeIds: ["internship"],
   },
   {
     id: "software-development-intern",
@@ -100,12 +76,8 @@ export const workExperiences: WorkExperience[] = [
       english: "Software Development Intern",
       german: "Softwareentwickler Praktikant",
     },
-    employer: {
-      english: "University of Iowa",
-      german: "Universität von Iowa",
-    },
+    employerId: "university-of-iowa",
     specializationIds: ["fullstack"],
-    typeIds: ["internship", "part-time"],
   },
 ]
 
@@ -132,21 +104,33 @@ export const workExperienceSpecializations: WorkExperienceSpecializations = {
   },
 }
 
-export const workExperienceTypes: WorkExperienceTypes = {
-  "full-time": {
-    english: "Full time",
-    german: "Vollzeit",
+export const workExperienceEmployers: WorkExperienceEmployers = {
+  spotify: {
+    name: {
+      english: "Spotify",
+      german: "Spotify",
+    },
+    logo: spotify,
   },
-  "part-time": {
-    english: "Part time",
-    german: "Teilzeit",
+  "kick-snare-hat-apps": {
+    name: {
+      english: "Kick Snare Hat Apps",
+      german: "Kick Snare Hat Apps",
+    },
+    logo: kickSnareHatApps,
   },
-  contract: {
-    english: "Contract",
-    german: "Vertrag",
+  "john-deere": {
+    name: {
+      english: "John Deere",
+      german: "John Deere",
+    },
+    logo: johnDeere,
   },
-  internship: {
-    english: "Internship",
-    german: "Praktikum",
+  "university-of-iowa": {
+    name: {
+      english: "University of Iowa",
+      german: "Universität von Iowa",
+    },
+    logo: universityOfIowa,
   },
 }

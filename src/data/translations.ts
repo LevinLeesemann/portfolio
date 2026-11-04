@@ -44,9 +44,7 @@ export const translations: Record<Language, Translation> = {
     },
     section: {
       experience: {
-        and: "and",
-        timelineEnd: "Career start",
-        timelineStart: "Present",
+        current: "Current",
         title: "My main gigs",
         subtitle: {
           head: "For more details about each of my roles visit my",
@@ -133,9 +131,7 @@ export const translations: Record<Language, Translation> = {
     },
     section: {
       experience: {
-        and: "und",
-        timelineEnd: "Karrierebeginn",
-        timelineStart: "Aktuell",
+        current: "Aktuell",
         title: "Meine Hauptjobs",
         subtitle: {
           head: "Für mehr Details zu meinen Jobs besuche mein",

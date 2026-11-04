@@ -38,9 +38,7 @@ export type Translation = {
   }
   section: {
     experience: {
-      and: string
-      timelineEnd: string
-      timelineStart: string
+      current: string
       title: string
       subtitle: Split
     }
